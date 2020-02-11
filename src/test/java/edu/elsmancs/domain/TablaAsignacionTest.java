@@ -8,7 +8,6 @@ import static org.junit.Assert.*;
 public class TablaAsignacionTest {
 
     private static TablaAsignacion tabla;
-    private static final char[] letrasNoPermitidas = {'I', 'Ñ', 'O', 'U'};
 
     @BeforeClass
     public static void crearTabla() {
