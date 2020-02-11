@@ -1,5 +1,7 @@
 package edu.elsmancs.domain;
 
+import java.util.List;
+
 class TablaAsignacion {
     private final char[] tabla = {'T', 'R', 'W', 'A', 'G', 'M',
             'Y', 'F', 'P', 'D', 'X', 'B',
@@ -26,5 +28,21 @@ class TablaAsignacion {
 
     private int getModulo() {
         return this.tabla.length;
+    }
+
+    static boolean calcLetra(List<String> casosTest, TablaAsignacion tabla){
+
+        for (String dni : casosTest) {
+
+            String parteNumericaDni = dni.substring(0, dni.length() - 1);
+            char letraDni = dni.charAt(dni.length() - 1);
+
+            if (tabla.calcularLetra( parteNumericaDni ) == letraDni) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+        return true;
     }
 }
